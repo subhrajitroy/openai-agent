@@ -16,7 +16,7 @@ async function chat() {
   You answer : Give weather is sunny, you can do the following activities`;
   let agent = new OpenAIAgent(prompt, client, Tools);
   let answer = await agent.start("What should I be eating today");
-  console.log(answer.message.content);
+  console.log(answer);
 }
 
 chat();

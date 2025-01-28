@@ -32,7 +32,7 @@ export class OpenAIAgent {
         new OpenAIRequest(this.messages, this.tools.config())
       );
     }
-    return response;
+    return response.message.content;
   }
 
   done() {
