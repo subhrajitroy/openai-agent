@@ -1,6 +1,6 @@
 import { ChatBot } from "./chatbot.js";
 import readline from "node:readline";
-import { Tools } from "../tools.js";
+import { Tools } from "../tools/weather_tools.js";
 import { exit } from "node:process";
 
 const rl = readline.createInterface({
