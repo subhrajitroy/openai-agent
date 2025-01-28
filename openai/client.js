@@ -12,7 +12,6 @@ export class OpenAIClient {
       model: model,
       messages: request.messages,
       tools: request.tools,
-      tool_choice: "auto",
     };
     let response = await this.client.chat.completions.create(openaiRequest);
     let choice = response.choices[0];

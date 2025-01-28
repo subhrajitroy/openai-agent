@@ -12,8 +12,10 @@ export class OpenAIAgent {
     let prompt = this.prompt;
     this.messages.push({ role: "system", content: prompt });
     this.messages.push({ role: "user", content: question });
+    let tools =
+      this.tools && this.tools["config"] ? this.tools.config() : undefined;
     let response = await this.client.send(
-      new OpenAIRequest(this.messages, this.tools.config())
+      new OpenAIRequest(this.messages, tools)
     );
 
     while (response.needsTools()) {
